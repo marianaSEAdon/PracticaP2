@@ -22,7 +22,10 @@ namespace PracticaP2
             get
             {
                 return seguroSocial;
-            } 
+            } set
+            {
+                seguroSocial = value;
+            }
               
         } 
 
