@@ -16,42 +16,17 @@ namespace PracticaP2
             horas = horasTrabajadas;
          }
 
-        public decimal Salario
-        {
-            get
-            {
-                return salario;
-            }
-            set
-            {
-                salario = ((value >= 0) ? value : 0);
-            }
-        }
+        public decimal Salario { get; set; }
 
 
-        public decimal Horas
-        {
-            get
-            {
-                return horas;
-            }
-            set
-            {
-                horas = ((value >= 0) && (value <= 168)) ?
-                    value : 0;
-            }
-        }
+        public decimal Horas { get; set; }
 
         public override decimal CalcularSalarioMensual()
         {
             return Salario * Horas;
         }
 
-        public override string ToString()
-        {
-            return string.Format("empleado Por horas: {0}\n{1}: {2:C}; {3}: {4:F2}",
-                base.ToString(), "salario por horas", Salario, "Horas trabajadas", Horas);
-        }
+  
 
 
     }

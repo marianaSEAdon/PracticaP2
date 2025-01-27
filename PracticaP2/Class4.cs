@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace PracticaP2
 {
-    internal class Class4
+    public class Administrativo : Empleado
     {
+        public decimal SalarioBase;
+        public Administrativo (string nombre, string seguro) : base(nombre, seguro)
+        {
+            
+        }
+
+        public override decimal CalcularSalarioMensual()
+        {
+            throw new NotImplementedException();
+        }
+
+
+
     }
 }

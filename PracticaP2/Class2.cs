@@ -14,29 +14,11 @@ namespace PracticaP2
             salarioMesual = salario;
         }
 
-        public decimal SalarioMesual
-        {
-            get
-            {
-                return salarioMesual;
-            } 
-            set
-            {
-                salarioMesual = ((value >= 0) ? value : 0); 
-            } 
-        }
-
+        public decimal SalarioMesual { get; set; }
         public override decimal CalcularSalarioMensual()
         {
             return SalarioMesual;
         }
-
-        public override string ToString()
-        {
-            return string.Format("empleado Fijo: {0}\n{1}: {2:C}", 
-                base.ToString(), "salario mensual", SalarioMesual);
-        }
-
 
     }
 }

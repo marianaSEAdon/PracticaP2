@@ -8,7 +8,7 @@ namespace PracticaP2
 {
     public abstract class Empleado
     {
-        private string primerNombre;
+        public string primerNombre { get; set; }
         private string seguroSocial;
 
         public Empleado(string nombre, string seguro)
@@ -17,13 +17,6 @@ namespace PracticaP2
             seguroSocial = seguro;
         }
 
-        public string PrimerNombre
-        {
-            get
-            {
-                return primerNombre;
-            }
-        }
         public string SeguroSocial
         {
             get
@@ -33,17 +26,7 @@ namespace PracticaP2
               
         } 
 
-
-        public override string ToString()
-        {
-            return string.Format("{0} {1}\nseguroSocial: {2}",
-            PrimerNombre, SeguroSocial);
-        }
-
-
         public abstract decimal CalcularSalarioMensual();
-
-
 
     }
 }
