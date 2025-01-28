@@ -8,24 +8,36 @@ namespace PracticaP2
 {
     public class Administrativo : Empleado
     {
-        private decimal SalarioBase { get; set; }
+        private decimal SalarioBase = 38000;
         public bool metas { get; set; }
 
 
-        public Administrativo (string nombre, string seguro,decimal salario, bool metasAlcanzadas) : base(nombre, seguro)
+        public Administrativo (string nombre, string seguro, bool metasAlcanzadas) : base(nombre, seguro)
         {
             metas = metasAlcanzadas;
-            SalarioBase = salario;
         }
 
         
         public override decimal CalcularSalarioMensual()
         {
 
-            throw new NotImplementedException();
+            if (metas)
+            {
+                SalarioBase = SalarioBase * 1.10m;
+                return SalarioBase;
+            }
+            else
+            {
+                return SalarioBase /  2;
+            }
         
         }
 
+        public override string ToString()
+        {
+            return $"Empleado Administrativo: {primerNombre}, Seguro Social: {SeguroSocial}, " +
+                   $"Salario Mensual: {CalcularSalarioMensual()}";
+        }
 
 
     }

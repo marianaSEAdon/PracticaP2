@@ -10,10 +10,14 @@ namespace PracticaP2
     {
         static void Main(string[] args)
         {
-            EmpleadoFijo empleadoFijo = new EmpleadoFijo("Mariana", "P2", 16000, false);
-            Console.WriteLine(empleadoFijo.CalcularSalarioMensual() );
+            EmpleadoFijo empleadoFijo = new EmpleadoFijo("Mariana", "P1-4023", 16000, true);
+            Console.WriteLine(empleadoFijo.ToString() );
 
+            Empleado empleadoPorHora = new EmpleadoPorHora("Juan", "P2-1230", 4);
+            Console.WriteLine(empleadoPorHora.ToString());
 
+            Empleado administrativo = new Administrativo("Alicia", "P3-0123", false);
+            Console.WriteLine(administrativo.ToString());
 
         }
     }

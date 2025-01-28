@@ -2,16 +2,14 @@
 {
     public class EmpleadoFijo : Empleado
     {
-        public decimal salarioMesual { get; set; }
-        public decimal bonificaciones { get; set; }
-
+        public decimal salarioMensual { get; set; }
         public bool metas { get; set; }
-
+        public decimal bonificaciones;
 
 
         public EmpleadoFijo(string nombre, string seguro, decimal salario, bool metasAlcanzadas) : base(nombre, seguro)
         {
-            salarioMesual = salario;
+            salarioMensual = salario;
             metas = metasAlcanzadas;
 
         }
@@ -22,19 +20,25 @@
         {
             if (metas)
             {
-                bonificaciones = salarioMesual / 10;
+                bonificaciones = salarioMensual / 10;
 
-                return salarioMesual + bonificaciones;
+                return salarioMensual + bonificaciones;
 
             }
             else
             {
-
-                return salarioMesual / 2;
-
+                return salarioMensual / 2;
             }
 
         }
+
+        public override string ToString()
+        {
+            return $"Empleado Fijo: {primerNombre}, Seguro Social: {SeguroSocial}, " +
+                   $"Salario Mensual: {CalcularSalarioMensual()}";
+        }
+
+
 
     }
 }

@@ -11,6 +11,7 @@ namespace PracticaP2
         public string primerNombre { get; set; }
         private string seguroSocial;
 
+
         public Empleado(string nombre, string seguro)
         {
             primerNombre = nombre;
